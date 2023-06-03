@@ -38,6 +38,7 @@ dependencies:
   cloud_firestore: ^4.8.0
   image_picker: ^0.8.7+5
   pakistan_cnic: ^0.0.2
+  quickalert: ^1.0.1
 
 dev_dependencies:
   flutter_test:
