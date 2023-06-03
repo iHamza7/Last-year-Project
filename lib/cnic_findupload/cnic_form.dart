@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 
+import '../owner/own_docs.dart';
 import '../size_config.dart';
 import 'cnic_helper.dart';
 import 'cnicmodel.dart';
-// import 'data_class.dart';
+
 import 'text_field.dart';
 
 class CnicForm extends StatefulWidget {
@@ -84,22 +85,20 @@ class _CnicFormState extends State<CnicForm> {
                     style: ElevatedButton.styleFrom(
                       backgroundColor: const Color(0XFFFF7643),
                     ),
-                    onPressed: () {
+                    onPressed: () async {
                       FirestoreHelper.addData(UserModel(
                         ownerName: ownerName!.text,
                         ownerNumber: ownerNumber!.text,
                         ownerExpire: ownerExpire!.text,
-                        // ownerName: args.ownerName.text,
-                        // ownerNumber: args.ownerNumber.text,
-                        // ownerExpire: args.ownerExpire.text,
                         finderName: finderName.text,
                         finderEmail: finderEmail.text,
                         finderAddress: finderAddress.text,
                         finderPhone: finderPhone.text,
                       ));
-                      //   debugPrint(args.ownerName.text);
-                      //   debugPrint(args.ownerNumber.text);
-                      //   debugPrint(args.ownerExpire.text);
+                      Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const OwnDocs()));
                     },
                     child: const Text('Submit'),
                   ),
