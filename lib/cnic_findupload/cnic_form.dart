@@ -100,7 +100,7 @@ class _CnicFormState extends State<CnicForm> {
                           MaterialPageRoute(
                               builder: (context) => const OwnDocs()));
                     },
-                    child: const Text('Submit'),
+                    child: const Text('Submit form'),
                   ),
                 ],
               ),
