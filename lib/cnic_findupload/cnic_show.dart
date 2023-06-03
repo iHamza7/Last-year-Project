@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'cnic_helper.dart';
-import 'cnicmodel.dart';
+// import 'cnic_helper.dart';
+// import 'cnicmodel.dart';
 import 'data_class.dart';
 import 'text_field.dart';
 
@@ -49,14 +49,14 @@ class _ShowCnicState extends State<ShowCnic> {
                         backgroundColor: Colors.green,
                       ),
                       onPressed: () {
-                        FirestoreHelper.addData(UserModel(
-                          ownerName: args.ownerName.text,
-                          ownerNumber: args.ownerNumber.text,
-                          ownerExpire: args.ownerExpire.text,
-                        ));
-                        debugPrint(args.ownerName.text);
-                        debugPrint(args.ownerNumber.text);
-                        debugPrint(args.ownerExpire.text);
+                        //   FirestoreHelper.addData(UserModel(
+                        //     ownerName: args.ownerName.text,
+                        //     ownerNumber: args.ownerNumber.text,
+                        //     ownerExpire: args.ownerExpire.text,
+                        //   ));
+                        //   debugPrint(args.ownerName.text);
+                        //   debugPrint(args.ownerNumber.text);
+                        //   debugPrint(args.ownerExpire.text);
                       },
                       child: const Text('next here'),
                     ),
