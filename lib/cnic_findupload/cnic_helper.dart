@@ -8,7 +8,7 @@ class FirestoreHelper {
   static Future addData(UserModel user) async {
     final usercollection = FirebaseFirestore.instance.collection("finderList");
 
-    final docRef = usercollection.doc();
+    final docRef = usercollection.doc(user.ownerName);
 
     final newUser = UserModel(
       ownerName: user.ownerName,

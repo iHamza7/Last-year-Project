@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 // import 'cnic_helper.dart';
 // import 'cnicmodel.dart';
 import 'cnic_form.dart';
+import 'cnicmodel.dart';
 import 'data_class.dart';
 import 'text_field.dart';
 
@@ -50,7 +51,17 @@ class _ShowCnicState extends State<ShowCnic> {
                         backgroundColor: Colors.green,
                       ),
                       onPressed: () {
-                        Navigator.pushNamed(context, CnicForm.routeName);
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => CnicForm(
+                                      userModel: UserModel(
+                                        ownerName: args.ownerName.text,
+                                        ownerNumber: args.ownerNumber.text,
+                                        ownerExpire: args.ownerExpire.text,
+                                      ),
+                                    )));
+                        // Navigator.pushNamed(context, CnicForm.routeName);
                         //   FirestoreHelper.addData(UserModel(
                         //     ownerName: args.ownerName.text,
                         //     ownerNumber: args.ownerNumber.text,

@@ -7,7 +7,8 @@ import 'cnicmodel.dart';
 import 'text_field.dart';
 
 class CnicForm extends StatefulWidget {
-  const CnicForm({super.key});
+  final UserModel userModel;
+  const CnicForm({required this.userModel, super.key});
   static String routeName = "/CnicForm";
   @override
   State<CnicForm> createState() => _CnicFormState();
@@ -18,6 +19,18 @@ class _CnicFormState extends State<CnicForm> {
   TextEditingController finderEmail = TextEditingController();
   TextEditingController finderAddress = TextEditingController();
   TextEditingController finderPhone = TextEditingController();
+  TextEditingController? ownerName;
+  TextEditingController? ownerNumber;
+  TextEditingController? ownerExpire;
+
+  @override
+  void initState() {
+    super.initState();
+    ownerName = TextEditingController(text: widget.userModel.ownerName);
+    ownerNumber = TextEditingController(text: widget.userModel.ownerNumber);
+    ownerExpire = TextEditingController(text: widget.userModel.ownerExpire);
+  }
+
   @override
   Widget build(BuildContext context) {
     // final args = ModalRoute.of(context)!.settings.arguments as ShowData;
@@ -73,6 +86,9 @@ class _CnicFormState extends State<CnicForm> {
                     ),
                     onPressed: () {
                       FirestoreHelper.addData(UserModel(
+                        ownerName: ownerName!.text,
+                        ownerNumber: ownerNumber!.text,
+                        ownerExpire: ownerExpire!.text,
                         // ownerName: args.ownerName.text,
                         // ownerNumber: args.ownerNumber.text,
                         // ownerExpire: args.ownerExpire.text,
@@ -98,6 +114,9 @@ class _CnicFormState extends State<CnicForm> {
 
   @override
   void dispose() {
+    ownerName!.dispose();
+    ownerNumber!.dispose();
+    ownerExpire!.dispose();
     finderName.dispose();
     finderEmail.dispose();
     finderAddress.dispose();
