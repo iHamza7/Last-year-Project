@@ -60,7 +60,7 @@ class _ShowCnicState extends State<ShowCnic> {
                         //   debugPrint(args.ownerNumber.text);
                         //   debugPrint(args.ownerExpire.text);
                       },
-                      child: const Text('next here'),
+                      child: const Text('Next'),
                     ),
                   ],
                 ),

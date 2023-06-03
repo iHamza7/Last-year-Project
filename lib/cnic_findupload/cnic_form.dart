@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
 import '../size_config.dart';
+import 'cnic_helper.dart';
+import 'cnicmodel.dart';
+// import 'data_class.dart';
 import 'text_field.dart';
 
 class CnicForm extends StatefulWidget {
@@ -17,6 +20,7 @@ class _CnicFormState extends State<CnicForm> {
   TextEditingController finderPhone = TextEditingController();
   @override
   Widget build(BuildContext context) {
+    // final args = ModalRoute.of(context)!.settings.arguments as ShowData;
     return SafeArea(
         child: Scaffold(
       appBar: AppBar(
@@ -48,15 +52,43 @@ class _CnicFormState extends State<CnicForm> {
             ),
             TextInputField(
               "Email",
-              finderName,
+              finderEmail,
             ),
             TextInputField(
               "Address",
-              finderName,
+              finderAddress,
             ),
             TextInputField(
               "Phone",
-              finderName,
+              finderPhone,
+            ),
+            Expanded(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: const Color(0XFFFF7643),
+                    ),
+                    onPressed: () {
+                      FirestoreHelper.addData(UserModel(
+                        // ownerName: args.ownerName.text,
+                        // ownerNumber: args.ownerNumber.text,
+                        // ownerExpire: args.ownerExpire.text,
+                        finderName: finderName.text,
+                        finderEmail: finderEmail.text,
+                        finderAddress: finderAddress.text,
+                        finderPhone: finderPhone.text,
+                      ));
+                      //   debugPrint(args.ownerName.text);
+                      //   debugPrint(args.ownerNumber.text);
+                      //   debugPrint(args.ownerExpire.text);
+                    },
+                    child: const Text('Submit'),
+                  ),
+                ],
+              ),
             ),
           ],
         ),
