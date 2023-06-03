@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'cnic_helper.dart';
 import 'cnicmodel.dart';
 import 'data_class.dart';
+import 'text_field.dart';
 
 class ShowCnic extends StatefulWidget {
   const ShowCnic({super.key});
@@ -26,59 +27,17 @@ class _ShowCnicState extends State<ShowCnic> {
           padding: const EdgeInsets.all(8.0),
           child: Column(
             children: [
-              Padding(
-                padding: const EdgeInsets.only(bottom: 8.0),
-                child: TextField(
-                  controller: args.ownerName,
-                  decoration: const InputDecoration(
-                    labelText: 'Name: ',
-                    labelStyle:
-                        TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
-                    fillColor: Colors.white,
-                    focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: Colors.black,
-                        width: 2.0,
-                      ),
-                    ),
-                  ),
-                ),
+              TextInputField(
+                "Name",
+                args.ownerName,
               ),
-              Padding(
-                padding: const EdgeInsets.only(bottom: 8.0),
-                child: TextField(
-                  controller: args.ownerNumber,
-                  decoration: const InputDecoration(
-                    labelText: 'Identity Number: ',
-                    labelStyle:
-                        TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
-                    fillColor: Colors.white,
-                    focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: Colors.black,
-                        width: 2.0,
-                      ),
-                    ),
-                  ),
-                ),
+              TextInputField(
+                "Identity Number",
+                args.ownerNumber,
               ),
-              Padding(
-                padding: const EdgeInsets.only(bottom: 8.0),
-                child: TextField(
-                  controller: args.ownerExpire,
-                  decoration: const InputDecoration(
-                    labelText: 'Expiry: ',
-                    labelStyle:
-                        TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
-                    fillColor: Colors.white,
-                    focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: Colors.black,
-                        width: 2.0,
-                      ),
-                    ),
-                  ),
-                ),
+              TextInputField(
+                "Expiry Date",
+                args.ownerExpire,
               ),
               Expanded(
                 child: Row(
