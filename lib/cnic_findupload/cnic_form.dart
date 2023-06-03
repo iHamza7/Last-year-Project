@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../size_config.dart';
 import 'text_field.dart';
 
 class CnicForm extends StatefulWidget {
@@ -23,6 +24,20 @@ class _CnicFormState extends State<CnicForm> {
         padding: const EdgeInsets.all(8.0),
         child: Column(
           children: [
+            const SizedBox(
+              height: 16,
+            ),
+            Text(
+              "Kindly submit your information so the owner can contact with you !",
+              style: TextStyle(
+                fontSize: getProportionateScreenWidth(20),
+                fontWeight: FontWeight.bold,
+                color: Colors.black54,
+              ),
+            ),
+            const SizedBox(
+              height: 16,
+            ),
             TextInputField(
               "Name",
               finderName,

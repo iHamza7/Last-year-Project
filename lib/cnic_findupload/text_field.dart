@@ -14,7 +14,7 @@ class TextInputField extends StatelessWidget {
         decoration: InputDecoration(
           labelText: labelText,
           labelStyle:
-              const TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
+              const TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
           fillColor: Colors.white,
           focusedBorder: const OutlineInputBorder(
             borderSide: BorderSide(
