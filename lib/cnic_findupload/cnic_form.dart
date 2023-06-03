@@ -19,6 +19,10 @@ class _CnicFormState extends State<CnicForm> {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
+      appBar: AppBar(
+        title: const Text('Fill the Form'),
+        centerTitle: true,
+      ),
       resizeToAvoidBottomInset: true,
       body: Padding(
         padding: const EdgeInsets.all(8.0),
