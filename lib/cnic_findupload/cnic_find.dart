@@ -82,7 +82,7 @@ class _CnicFindState extends State<CnicFind> {
                       finderPhone.text = dataShot['FinderPhone'];
                     } else {}
                   },
-                  child: const Text('Search '),
+                  child: const Text('Search the '),
                 ),
               ],
             ),
