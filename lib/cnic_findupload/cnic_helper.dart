@@ -5,6 +5,15 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'cnicmodel.dart';
 
 class FirestoreHelper {
+  Future<Map<String, dynamic>> retrieveData(String email) async {
+    QuerySnapshot<Map<String, dynamic>> snapshot = FirebaseFirestore.instance
+        .collection("finderList")
+        .where("ownerNumber", isEqualTo: email)
+        .get() as QuerySnapshot<Map<String, dynamic>>;
+
+    return Future.value(snapshot.docs.first.data());
+  }
+
   static Future addData(UserModel user) async {
     final usercollection = FirebaseFirestore.instance.collection("finderList");
 
