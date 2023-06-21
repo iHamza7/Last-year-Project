@@ -5,14 +5,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'cnicmodel.dart';
 
 class FirestoreHelper {
-  // static retrieveData(String ownerNum) async {
-  //   final snapshot = await FirebaseFirestore.instance
-  //       .collection("finderList")
-  //       .where("OwnerNumber", isEqualTo: ownerNum)
-  //       .get();
-
-  //   return Future.value(snapshot.docs.first.data());
-  // }
   retrieveData(String ownerNum) async {
     final snapshot = await FirebaseFirestore.instance
         .collection('finderList')
@@ -28,7 +20,7 @@ class FirestoreHelper {
   static Future addData(UserModel user) async {
     final usercollection = FirebaseFirestore.instance.collection("finderList");
 
-    final docRef = usercollection.doc(user.ownerName);
+    final docRef = usercollection.doc();
 
     final newUser = UserModel(
       ownerName: user.ownerName,

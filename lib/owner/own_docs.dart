@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../buttoncomp.dart/docs.dart';
 import '../buttoncomp.dart/docs2.dart';
+import '../size_config.dart';
 
 class OwnDocs extends StatefulWidget {
   const OwnDocs({Key? key}) : super(key: key);
@@ -31,26 +32,18 @@ class _OwnDocsState extends State<OwnDocs> {
           padding: const EdgeInsets.all(12.0),
           child: Column(
             children: [
-              Container(
-                height: 120,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  color: Colors.blueGrey,
-                ),
-                child: const Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      "Describe Who you are ?",
-                      style: TextStyle(fontSize: 25.0, color: Colors.white),
-                    ),
-                  ],
+              Text(
+                "Describe Who You are !",
+                style: TextStyle(
+                  fontSize: getProportionateScreenWidth(20),
+                  fontWeight: FontWeight.bold,
+                  color: const Color(0XFFFF7643),
                 ),
               ),
               const SizedBox(
                 height: 20,
               ),
+              const Divider(),
               Expanded(
                 child: GridView(
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
